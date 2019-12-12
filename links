@@ -70,4 +70,321 @@ Text Detection : CTPN
 eragonruan/text-detection-ctpn
 https://github.com/eragonruan/text-detection-ctpn (https://theailearner.com/tag/ctpn/ https://github.com/tianzhi0549/CTPN https://algorithmia.com/algorithms/character_recognition/TextDetectionCTPN/docs 
 
+PDF Minor:
+
+
+Tabula :
+https://blog.chezo.uno/tabula-py-extract-table-from-pdf-into-python-dataframe-6c7acfa5f302
+https://aegis4048.github.io/parse-pdf-files-while-retaining-structure-with-tabula-py
+
+Camelot:
+https://hackernoon.com/announcing-camelot-a-python-library-to-extract-tabular-data-from-pdfs-605f8e63c2d5
+https://github.com/atlanhq/camelot
+https://camelot-py.readthedocs.io/en/master/user/advanced.html#specify-table-regions
+
+Data Mining OCR PDFs — Using pdftabextract to liberate tabular data from scanned documents:
+https://datascience.blog.wzb.eu/2017/02/16/data-mining-ocr-pdfs-using-pdftabextract-to-liberate-tabular-data-from-scanned-documents/
+https://datascience.blog.wzb.eu/2016/07/08/data-mining-ocr-pdfs-getting-things-straight/#more-96
+http://www.lib4dev.in/info/WZBSocialScienceCenter/pdftabextract/62884666
+
+Pdf Table Extract:
+https://github.com/WZBSocialScienceCenter/pdftabextract
+
+OCRmyPDF:
+https://ocrmypdf.readthedocs.io/en/latest/cookbook.html
+https://www.pyimagesearch.com/2018/09/17/opencv-ocr-and-text-recognition-with-tesseract/
+
+OCR:
+https://hdw.artsci.wustl.edu/articles/154
+
+Searchable PDF :
+https://www.aquaforest.com/files/searchable%20PDF.pdf
+
+
+OTR Issue:
+https://github.com/ulikoehler/OTR/issues/2
+
+Line detection:
+https://www.geeksforgeeks.org/line-detection-python-opencv-houghline-method/
+https://docs.opencv.org/3.4/dd/dd7/tutorial_morph_lines_detection.html
+https://medium.com/coinmonks/a-box-detection-algorithm-for-any-image-containing-boxes-756c15d7ed26
+https://www.geeksforgeeks.org/python-grid-method-in-tkinter/
+https://docs.opencv.org/3.4/dd/dd7/tutorial_morph_lines_detection.html
+https://stackoverflow.com/questions/56558211/detecting-and-removing-vertical-and-horizontal-lines-in-opencv
+
+
+
+
+Research Paper:
+https://www.researchgate.net/publication/220781373_Automatic_Table_Detection_in_Document_Images
+
+How to find table like structure in image
+
+https://stackoverflow.com/questions/50829874/how-to-find-table-like-structure-in-image/51756462
+https://stackoverflow.com/questions/57210148/what-is-the-best-way-to-extract-text-contained-within-a-table-in-a-pdf-using-pyt/57664735#57664735
+
+Iterating over rows and columns in Pandas DataFrame
+https://www.geeksforgeeks.org/iterating-over-rows-and-columns-in-pandas-dataframe/
+
+https://www.geeksforgeeks.org/different-ways-to-iterate-over-rows-in-pandas-dataframe/
+https://www.tutorialspoint.com/python_pandas/python_pandas_iteration.htm
+
+Regular Expression:
+https://www.geeksforgeeks.org/replace-values-in-pandas-dataframe-using-regex/
+https://www.geeksforgeeks.org/split-a-string-into-columns-using-regex-in-pandas-dataframe/
+https://kanoki.org/2019/03/27/pandas-select-rows-by-condition-and-string-operations/
+
+
+Image segregation by k-mean python
+https://stackoverflow.com/questions/51245877/image-segregation-by-k-mean-python/51257687#51257687
+
+
+Working with Missing Data in Pandas
+https://www.geeksforgeeks.org/working-with-missing-data-in-pandas/
+
+
+Extracting Tabular Data from PDFs
+http://www.degeneratestate.org/posts/2016/Jun/15/extracting-tabular-data-from-pdfs/
+
+https://www.binpress.com/manipulate-pdf-python/
+
+
+Github:
+https://github.com/WZBSocialScienceCenter/pdftabextract
+https://github.com/HazyResearch/pdftotree
+https://github.com/campdav/Extract-Part-of-Pdf
+
+
+https://stackoverflow.com/questions/59124487/how-to-extract-text-or-numbers-from-images-using-python
+
+https://stackoverflow.com/questions/59135975/need-help-in-table-detection-using-tesserocr-python
+https://github.com/tesseract-ocr/tesseract/issues/1714
+https://stackoverflow.com/questions/59140134/python-pytesseract-cant-find-eng-traineddata-for-oem-2
+
+https://stackoverflow.com/questions/58670750/pytesseract-apply-results-to-original-image-and-generate-pdf
+
+
+I tried to use many libraries to extract table from PDF like : camelot , tabula , PDFPlumber , PDFTabExtract ... but they don't give a good result. The main problem is that headers are in complex format , and i have different format of headers . 
+with camelot i can't have a script that works for all pages in my PDF. with Tabula i got a confusing dataframe when the table has a rotated text header . with PDFPlumber i got problem with Stream Table (it works good only for Lattice table) and whith PDFTabExtract i got a problem when the text is rotated , it ignore it.
+is there any solution whith which i can convert any table in my pdf that has different format ? i know that i can't find a generic solution , but atleast something that give a decent result .
+Tables are built by manipulating the distance between chunks of text. Text extraction of tables from PDF are based on identifying a table like structure by analyzing those distances. 
+Since the detection is not deterministic (i.e. like a table in a docx file), each solution that you mentioned has its own heuristics on how to detect tables and text. Each method with its pros and cons. A complex table such as the one you gave as an example is bound to yield poor results from most or all PDF text extractors. 
+OCR will likely identify the table in a similar manner and give similar results. 
+When performing OCR, it is extrememly important to preprocess the image to get the foreground text in black with the background in white. In addition, enlarging the image can help improve the detection results. I've also found that adding a slight Gaussian blur improves accuracy before throwing it into Pytesseract. Here's the results with --psm 6 to treat the image as a single block of text. Look here for more configuration options. 
+
+1
+If the table format is predictable, and the PDF is of good quality, then you can convert the PDF pages to .tiff files with 300 density and 8 depth, using ImageMagick. Then you can crop out the text part you want to OCR. 
+Another option would be to remove the table itself from the image, and leaving only text. I did it one time, but it performed worse than the first option. 
+
+
+
+
+import cv2
+import pytesseract
+
+pytesseract.pytesseract.tesseract_cmd = r"C:\Program Files\Tesseract-OCR\tesseract.exe"
+
+image = cv2.imread('1.png', 0)
+thresh = cv2.threshold(image, 0, 255, cv2.THRESH_BINARY_INV + cv2.THRESH_OTSU)[1]
+
+data = pytesseract.image_to_string(thresh, lang='eng',config='--psm 6')
+print(data)
+
+cv2.imshow('thresh', thresh)
+cv2.waitKey()
+An alternative approach is to use OpenCV with thresholding + contour area filtering to detect the grid. From here you can remove the horizontal and vertical lines then perform OCR with pytesseract. Maybe add an input image?
+
+
+playing-card-detection 
+https://github.com/geaxgx/playing-card-detection
+
+
+ML Projects:
+https://github.com/rajat5ranjan/ml-projects
+NLP Projects :
+https://github.com/rajat5ranjan/NLP-progress
+https://github.com/rajat5ranjan/Coursera-ML-AndrewNg
+https://github.com/rajat5ranjan?after=Y3Vyc29yOnYyOpK5MjAxOS0wMS0yMlQwMDoxMzoyMSswNTozMM4KGrkM&tab=repositories
+
+Image Processing:
+https://www.ncbi.nlm.nih.gov/pmc/articles/PMC4081273/
+http://eeweb.poly.edu/~yao/EL5123/lecture1_intro.pdf
+https://code.tutsplus.com/articles/image-enhancement-in-python--cms-29289
+https://developer.ibm.com/tutorials/document-scanner/
+https://www.oreilly.com/library/view/programming-computer-vision/9781449341916/ch01.html
+https://opencv-python-tutroals.readthedocs.io/en/latest/py_tutorials/py_imgproc/py_colorspaces/py_colorspaces.html#converting-colorspaces
+https://www.python-course.eu/python_image_processing.php
+
+https://www.freecodecamp.org/news/getting-started-with-tesseract-part-ii-f7f9a0899b3f/ - imp
+
+
+IntelligentOCR
+https://libraries.io/github/mawanda-jun/IntelligentOCR
+https://github.com/mawanda-jun/IntelligentOCR
+
+
+OTR:
+https://github.com/ulikoehler/OTR/blob/master/Interactive.ipynb
+https://github.com/jsvine/pdfplumber
+https://github.com/invoice-x/invoice2data
+https://mzucker.github.io/2016/09/20/noteshrink.html - Compressing and enhancing hand-written notes
+
+https://github.com/AjeetSingh02/Notebooks/blob/master/work_image_to_table.ipynb
+https://github.com/mzucker/page_dewarp/blob/master/page_dewarp.py
+https://emerj.com/partner-content/information-extraction-in-insurance/
+https://github.com/SundeepPidugu/paper-To-Reviewer-Matching-System
+https://github.com/SundeepPidugu/bert-gen
+https://github.com/SundeepPidugu?tab=repositories
+https://github.com/nathancy/openCV-Fedex-Detector
+https://github.com/AkshayChoulwar/Pandas
+https://github.com/ashima/pdf-table-extract
+
+https://github.com/akkidev95/Machine-Learning-Stanford-University---Andrew-Ng
+
+Deep Dive Into OCR for Receipt Recognition 
+
+https://dzone.com/articles/using-ocr-for-receipt-recognition
+
+
+HI nathancy ,I have many invoices that are having tables with boundaries and some dont and in some invoices there are redundant data which are inside the external contour while extraction so the y+h coordinate that i get is not correct .My main aim for getting to have tesseract todetect table is that i get the end point from the table .I want to get the exact ending coordinates of the table in an image .Rest of the algorithm i have completed . You can take a look at any invoices on google , sorry i cant share the images i am working on but they are mainly invoices of different types.
+
+As you can see, I am passing in the directory of eng.traineddata explicitly but it can't find the language file.
+I have two questions:
+    1. How to improve the quality of the OCR with the first config file? 
+    2. Why can't the language file be found? I have eng.traineddata, eng.user-patterns, and eng.user-words in the mentioned folder, as well as some other files and folders that were installed there. 
+I have also made sure that my environment variables are correct (hence the first config file could work).
+Thank you
+Image processing 
+        ◦ Rescaling 
+        ◦ Binarisation 
+        ◦ Noise Removal 
+        ◦ Rotation / Deskewing 
+        ◦ Borders 
+        ◦ Transparency / Alpha channel 
+        ◦ Tools / Libraries 
+        ◦ Examples 
+    • Page segmentation method 
+    • Dictionaries, word lists, and patterns 
+    • Still having problems? 
+Regex to extract the date
+
+0
+I'm constructing a program to extract text from a pdf, put it in a structured format, and send it off to a database. I have roughly 1,400 individual pdfs that all follow a similar format, but nuances in the verbiage and plan designs that the documents summarize make it tricky.
+I've played around with a couple different pdf readers in python including tabula-py and pdfminer but none of them are quite getting to what I'd like to do. Tabula reads in all of the text very well, however it pulls everything as it explicitly lays horizontally, excluding the fact that some of the text is wrapped in a box. For example, if you open up the sample SBC I have attached where it reads "What is the overall deductible?" Tabula will read in "What is the overall $500/Individual or..." skipping the fact that the word "deductible" is really part of the first sentence. (Note the files I'm working with are pdfs but I've attached a jpeg because I couldn't figure out how to attach a pdf.)
+
+You can't extract scanned text from a PDF. You need OCR software. The good news is there are a few open source applications you can try and the OCR route will most likely be easier than using a PDF library to extract text. Check out Tesseract and GOCR.
+
+Are there any open source libraries that support table identification & extraction?
+By this I mean: 
+    1. Identify a table structure exists 
+    2. Classify the table from its contents 
+    3. Extract data from the table in a useful output format e.g. JSON / CSV etc. 
+I have looked through similar questions on this topic and found the following:
+    • PDFMiner which addresses problem 3, but it seems the user is required to specify to PDFMiner where a table structure exists for each table (correct me if I'm wrong) 
+    • pdf-table-extract which attempts to address problem 1 but according to the To-Do list, cannot currently identify tables that are separated by whitespace. This is a problem as all tables in my PDFs are separated by whitespace! 
+Currently, I am thinking that I would have to spend a lot of time developing a Machine Learning solution to identify table structures from PDFs. Therefore, any alternative approaches would be more than welcome!
+
+
+http://francescopochetti.com/text-recognition-natural-scenes/
+
+https://github.com/FraPochetti/ImageTextRecognition
+
+Deep Learning :
+
+https://github.com/abhijeet00/deep-learning
+
+
+Open V Tutorial Github :
+https://github.com/eLtronicsVilla/Opencv-Tutorial/tree/master/CPP-work
+https://github.com/abhijeet00/deep-learning
+https://stackoverflow.com/questions/37771263/detect-text-area-in-an-image-using-python-and-opencv
+https://docs.opencv.org/master/d7/d4d/tutorial_py_thresholding.html
+
+NLP ProJetc :
+
+https://github.com/abhijeet3922?tab=repositories
+
+Important https://github.com/Vasistareddy?tab=repositories
+
+
+ChatBot :
+Building a Simple Chatbot from Scratch in Python (using NLTK)
+https://github.com/parulnith/Building-a-Simple-Chatbot-in-Python-using-NLTK
+
+https://github.com/parulnith/Building-a-Conversational-Chatbot-for-Slack-using-Rasa-and-Python
+
+
+Python:
+https://github.com/parulnith/Useful-String-Methods-in-Python/blob/master/Useful%20Python%20String%C2%A0Methods.ipynb
+
+https://github.com/parulnith/Elements-of-Functional-Programming-in-Python
+
+https://github.com/parulnith/10-Simple-hacks-to-speed-up-your-Data-Analysis-in-Python
+https://github.com/parulnith/Complete-Python-3-Bootcamp
+https://github.com/rahulsinghpatel/python_notebook
+
+
+
+Prediction :
+Predicting-the-Future-with-Facebook-s-Prophet/Forecasting Views for a Medium article using Prophet..ipynb: https://github.com/parulnith/Predicting-the-Future-with-Facebook-s-Prophet/blob/master/Forecasting%20Views%20for%20a%20Medium%20article%20using%20Prophet..ipynb
+
+Open Cv :
+Face Detection : https://github.com/parulnith/Face-Detection-in-Python-using-OpenCV
+https://github.com/rahulsinghpatel/cv_algorithms/tree/master/cv_algorithms
+
+
+Matplot :
+https://github.com/parulnith/Animations-with-Matplotlib
+
+
+Keras:
+https://github.com/parulnith/My-Journey-into-DeepLearning-using-Keras
+https://github.com/lw3259111/Advanced-Deep-Learning-with-Keras
+
+
+Machine Learning :
+https://github.com/parulnith/machine-Learning-solutions
+
+https://github.com/parulnith/Loan_Prediction
+https://github.com/parulnith/100-Days-Of-ML-Code
+https://github.com/lw3259111/stanford-tensorflow-tutorials
+https://github.com/parulnith/Recommender-Systems--Dataset/blob/master/Predicting%20Loan%20Defaults%20in%20the%20Fannie%20Mae%20Data%20Set.ipynb
+https://github.com/parulnith/Air-Quality-Analysis-/blob/master/T091_Air_Quality.ipynb
+https://github.com/parulnith/Machine_Learning
+https://github.com/parulnith/Data-Science-Projects
+https://github.com/Vasistareddy/Address-Parser
+https://github.com/lxiao217/ML-DL
+
+
+
+Pytorch :
+https://github.com/parulnith/pytorch-sentiment-analysis
+
+
+Deep Learning :
+https://github.com/parulnith/Deep-Learning-1
+https://github.com/parulnith/deep-learning-with-python-notebooks
+https://github.com/parulnith/deep-learning
+https://github.com/parulnith/notebooks
+
+
+Tensor Flow :
+https://github.com/parulnith/TensorFlow-Object-Detection-API-Tutorial-Train-Multiple-Objects-Windows-10
+https://github.com/lw3259111/TensorFlow-Tutorials
+https://github.com/lw3259111/TensorFlow-Examples
+
+
+DS Interview :
+https://github.com/parulnith/DataScience_Interview_Seminar/blob/master/DS_Interview_Tips.ipynb
+
+
+Text Detection :
+TimChinenov/PictureText https://github.com/TimChinenov/PictureText?source=post_page-----8be34c677c11----------------------
+
+https://github.com/Vasistareddy/text_classification_DL_vs_ML
+
+Bert :
+https://github.com/Ivalua/BERT-keras-TF-CNTK
+
+
 
