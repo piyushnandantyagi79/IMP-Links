@@ -1,0 +1,24 @@
+
+OCR : 
+Using Tesseract OCR with Python : https://www.pyimagesearch.com/2017/07/10/using-tesseract-ocr-python/
+https://www.learnopencv.com/deep-learning-based-text-recognition-ocr-using-tesseract-and-opencv/
+https://towardsdatascience.com/a-gentle-introduction-to-ocr-ee1469a201aa
+
+
+Python | Reading contents of PDF using OCR (Optical Character Recognition) : https://www.geeksforgeeks.org/python-reading-contents-of-pdf-using-ocr-optical-character-recognition/
+
+
+
+Number plate detection :
+DeepSystems/supervisely-tutorials : https://github.com/DeepSystems/supervisely-tutorials (https://hackernoon.com/latest-deep-learning-ocr-with-keras-and-supervisely-in-15-minutes-34aecd630ed8)
+
+
+Handwritten :
+https://mzucker.github.io/2016/09/20/noteshrink.html (
+
+
+Image Processing :
+https://www.freecodecamp.org/news/getting-started-with-tesseract-part-ii-f7f9a0899b3f/
+page_dewarp : https://github.com/mzucker/page_dewarp
+
+
