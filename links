@@ -3,9 +3,19 @@ OCR :
 Using Tesseract OCR with Python : https://www.pyimagesearch.com/2017/07/10/using-tesseract-ocr-python/
 https://www.learnopencv.com/deep-learning-based-text-recognition-ocr-using-tesseract-and-opencv/
 https://towardsdatascience.com/a-gentle-introduction-to-ocr-ee1469a201aa
+https://github.com/Ivalua/object_detection_ocr
+https://github.com/ZoranPavlovic/pyocr
+https://github.com/tesseract-ocr/tesseract/wiki/ImproveQuality#dictionaries-word-lists-and-patterns
+https://github.com/Nagakiran1/4-simple-steps-in-Builiding-OCR
+https://medium.com/cashify-engineering/improve-accuracy-of-ocr-using-image-preprocessing-8df29ec3a033
+https://medium.com/saarthi-ai/how-to-build-your-own-ocr-a5bb91b622ba
+https://github.com/jasonlfunk/ocr-text-extraction/blob/master/extract_text
+
+
 
 
 Python | Reading contents of PDF using OCR (Optical Character Recognition) : https://www.geeksforgeeks.org/python-reading-contents-of-pdf-using-ocr-optical-character-recognition/
+https://www.geeksforgeeks.org/python-opencv-cv2-rectangle-method/
 
 
 
@@ -20,5 +30,44 @@ https://mzucker.github.io/2016/09/20/noteshrink.html (
 Image Processing :
 https://www.freecodecamp.org/news/getting-started-with-tesseract-part-ii-f7f9a0899b3f/
 page_dewarp : https://github.com/mzucker/page_dewarp
+https://github.com/parulnith/Image-Processing-in-Python/blob/master/Image%20Segmentation%20using%20Python's%20scikit-image%20module/Image%20Segmentation%20using%20Python's%20scikit-image%20module.ipynb
+Imp : https://circuitdigest.com/tutorial/image-segmentation-using-opencv
+Image Seg : https://towardsdatascience.com/image-segmentation-using-pythons-scikit-image-module-533a61ecc980 (https://github.com/Vasistareddy/image.title)
+https://github.com/hussaintamboli/python-image-to-text/blob/master/recognise.py
+Stack : https://stackoverflow.com/questions/9480013/image-processing-to-improve-tesseract-ocr-accuracy
+
+
+
+Data Visulation Project :
+Data-Visualisation-libraries
+https://github.com/parulnith/Data-Visualisation-libraries
+
+Setiment Analysis :
+https://github.com/Vasistareddy/sentiment_analysis
+https://github.com/Nagakiran1/Review_Text_Classification/blob/master/Review_Text_Classification.ipynb
+https://github.com/rahulsinghpatel/AV-Innoplexus-Online-Hiring-Hackathon-Sentiment-Analysis
+
+
+Table Detection :
+https://github.com/rahulsinghpatel/Table-Detection-using-Deep-learning
+
+Text Extraction :
+https://stackoverflow.com/questions/48597099/text-extraction-from-image-after-detecting-text-region-with-contours
+https://github.com/pa189/Image-text-detection 
+
+Text Reconsruction :
+http://francescopochetti.com/text-recognition-natural-scenes/
+
+
+Neural networ :
+https://github.com/rahulsinghpatel/Neural-Tensor-Network
+https://github.com/Nagakiran1/Classification_with_Deep_NN/blob/master/Classificatin_Neural_Networks1.ipynb
+
+Bounding Blocks :
+https://www.danvk.org/2015/01/07/finding-blocks-of-text-in-an-image-using-python-opencv-and-numpy.html
+
+Text Detection : CTPN
+eragonruan/text-detection-ctpn
+https://github.com/eragonruan/text-detection-ctpn (https://theailearner.com/tag/ctpn/ https://github.com/tianzhi0549/CTPN https://algorithmia.com/algorithms/character_recognition/TextDetectionCTPN/docs 
 
 
