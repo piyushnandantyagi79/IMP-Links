@@ -387,4 +387,45 @@ Bert :
 https://github.com/Ivalua/BERT-keras-TF-CNTK
 
 
+Crop Rectangle returned by minAreaRect OpenCV
+Open Cv :
+https://www.analyticsvidhya.com/blog/2019/03/opencv-functions-computer-vision-python/
+https://docs.opencv.org/3.4/dd/d49/tutorial_py_contour_features.html
+https://jdhao.github.io/2019/02/23/crop_rotated_rectangle_opencv/
 
+https://gist.github.com/bigsnarfdude/d811e31ee17495f82f10db12651ae82d
+https://stackoverflow.com/questions/37177811/crop-rectangle-returned-by-minarearect-opencv-python
+https://datascience.blog.wzb.eu/2017/02/16/data-mining-ocr-pdfs-using-pdftabextract-to-liberate-tabular-data-from-scanned-documents/
+https://machinelearningmastery.com/sequence-classification-lstm-recurrent-neural-networks-python-keras/
+https://github.com/shravan1394/Character-Recognition
+
+Segmentation :
+https://github.com/dishank-b/Character_Segmentation
+https://github.com/zhufeida/Benchmark_EPS
+https://github.com/tensorflow/cleverhans/blob/master/cleverhans_tutorials/mnist_tutorial_keras.py
+
+
+
+Model CNN:
+https://towardsdatascience.com/what-is-label-smoothing-108debd7ef06
+
+https://github.com/aparande/ML-Implementation
+
+https://github.com/akshaybahadur21/Alphabet-Recognition-EMNIST
+https://github.com/goncalopp/simple-ocr-opencv
+https://github.com/imneonizer/Crop-Rows-From-Tables-using-OpenCV-and-Python
+https://github.com/da03/Attention-OCR/tree/master/src/model
+
+
+https://github.com/WZBSocialScienceCenter/pdftabextract
+https://github.com/AjeetSingh02
+https://github.com/jbarlow83/OCRmyPDF/blob/master/docs/cookbook.rst
+https://github.com/invoice-x/invoice2data
+https://github.com/AjeetSingh02/ML_outlier_detection_and_removal
+https://github.com/MLWhiz
+https://github.com/karmatta
+https://www.pyimagesearch.com/2017/07/17/credit-card-ocr-with-opencv-and-python/
+https://datascience.blog.wzb.eu/2016/07/08/data-mining-ocr-pdfs-getting-things-straight/#more-96
+https://towardsdatascience.com/how-to-extract-keywords-from-pdfs-and-arrange-in-order-of-their-weights-using-python-841556083341
+https://github.com/invoice-x/invoice2data
+https://buildmedia.readthedocs.org/media/pdf/opencv-python-tutroals/latest/opencv-python-tutroals.pdf
